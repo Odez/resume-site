@@ -1,0 +1,296 @@
+https://github.com/Odez/resume-site/new/main
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oscar Meza Guedez — Resume</title>
+  <meta name="description" content="Oscar Meza Guedez — Resume" />
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#0f1624;
+      --text:#e8eefc;
+      --muted:#a9b4cf;
+      --line:rgba(255,255,255,.10);
+      --accent:#7aa2ff;
+      --chip:rgba(122,162,255,.12);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 10% 10%, rgba(122,162,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 30%, rgba(124,255,230,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.55;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:40px 18px 72px}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius:18px;
+      overflow:hidden;
+    }
+    header{
+      padding:28px 28px 18px;
+      border-bottom:1px solid var(--line);
+      background: rgba(0,0,0,.12);
+      backdrop-filter: blur(8px);
+    }
+    .top{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    h1{margin:0; font-size:34px; letter-spacing:-.02em}
+    .role{margin-top:6px; color:var(--muted); font-weight:500}
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+      margin-top:8px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      white-space:nowrap;
+    }
+    .pill strong{color:var(--text); font-weight:600}
+    main{padding:22px 28px 30px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.6fr .9fr;
+      gap:22px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+    section{margin:0 0 20px}
+    h2{
+      margin:0 0 10px;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .summary{
+      margin:0;
+      color:rgba(232,238,252,.92);
+      font-size:16px;
+    }
+    .item{
+      padding:14px 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: rgba(0,0,0,.10);
+      margin-bottom:12px;
+    }
+    .item:last-child{margin-bottom:0}
+    .item-head{
+      display:flex;
+      gap:12px;
+      justify-content:space-between;
+      align-items:baseline;
+      flex-wrap:wrap;
+    }
+    .item-title{
+      font-weight:700;
+      font-size:16px;
+      margin:0;
+    }
+    .item-sub{
+      margin:3px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:500;
+    }
+    .item-date{
+      color:var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    ul{
+      margin:10px 0 0 18px;
+      padding:0;
+    }
+    li{margin:6px 0}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      font-size:13px;
+      color:var(--text);
+      background: var(--chip);
+      border:1px solid rgba(122,162,255,.25);
+      padding:7px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .small{font-size:14px; color:var(--muted); margin:0}
+    .foot{
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+    }
+    @media print{
+      body{background:#fff; color:#000}
+      .wrap{padding:0; max-width:100%}
+      .card{box-shadow:none; border:0; border-radius:0; background:#fff}
+      header{background:#fff; border-bottom:1px solid #ddd}
+      .item{border:1px solid #ddd; background:#fff}
+      a{color:#000; text-decoration:none}
+      .chip{border:1px solid #bbb; background:#f5f5f5}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="top">
+          <div>
+            <h1>Oscar Meza Guedez</h1>
+            <div class="role">Solution Architect</div>
+            <!-- Buttons can be added here if desired -->
+          </div>
+          <div class="meta">
+            <div class="pill"><strong>San Francisco, CA</strong></div>
+            <div class="pill">email: <a href="mailto:omguedez@outlook.com">omguedez@outlook.com</a></div>
+            <div class="pill">phone: <a href="tel:+14154887231">415-488-7231</a></div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="grid">
+          <div>
+            <section>
+              <h2>Summary</h2>
+              <p class="summary">
+                Partner Solution Architect with a proven track record of enabling partners to deploy Modern Work and AI solutions aligned to business goals. Skilled in building frameworks that accelerate AI adoption and drive partner readiness. Recognized for scaling partner operations and creating measurable business outcomes. Adept at collaborating across teams to deliver industry-leading solutions.
+              </p>
+            </section>
+
+            <section>
+              <h2>Experience</h2>
+
+              <div class="item">
+                <div class="item-head">
+                  <div>
+                    <p class="item-title">Partner Solution Architect — Microsoft</p>
+                    <p class="item-sub">San Francisco, CA (Remote)</p>
+                  </div>
+                  <div class="item-date">May&nbsp;2024&nbsp;—&nbsp;Nov&nbsp;2025</div>
+                </div>
+                <ul>
+                  <li>Empowered Microsoft partners to architect and deploy Modern Work solutions aligned to customer business goals, delivering strategic guidance and enabling scalable solution adoption.</li>
+                  <li>Created and implemented scalable enablement frameworks that accelerated partner AI adoption and boosted technical readiness, improving partner capabilities and reducing time-to-deployment.</li>
+                  <li>Facilitated partner assessments using a standardized AI advisory framework, optimizing deployment readiness, extensibility, and go-to-market strategies, providing actionable insights for improvement.</li>
+                  <li>Built the Copilot Practice Evaluation Framework, now the global standard for Partner Solution Architects, ensuring only top-tier partners qualify for funded engagements and standardized processes.</li>
+                </ul>
+              </div>
+
+              <div class="item">
+                <div class="item-head">
+                  <div>
+                    <p class="item-title">Enterprise Account Manager — Microsoft</p>
+                    <p class="item-sub">San Francisco, CA (555 California St)</p>
+                  </div>
+                  <div class="item-date">Apr&nbsp;2021&nbsp;—&nbsp;Sep&nbsp;2023</div>
+                </div>
+                <ul>
+                  <li>Developed strategic account plans to increase customer retention and revenue, building strong executive relationships and collaborating with internal teams to accelerate deal closure.</li>
+                  <li>Executed complex sales strategies for B2B SaaS offerings, identifying upsell and cross-sell opportunities, negotiating contracts, and supporting regional sales enablement initiatives.</li>
+                  <li>Partnered with cross-functional teams to enhance GTM execution, coordinating with marketing, product, and engineering for customer success and delivering presentations to executive stakeholders.</li>
+                  <li>Tracked performance metrics to optimize account management, measured growth and retention using KPIs and analytics, and recommended strategies to improve account performance.</li>
+                </ul>
+              </div>
+
+              <div class="item">
+                <div class="item-head">
+                  <div>
+                    <p class="item-title">Technical Advisor — Microsoft</p>
+                    <p class="item-sub">San Francisco, CA (555 California St)</p>
+                  </div>
+                  <div class="item-date">Sep&nbsp;2017&nbsp;—&nbsp;Apr&nbsp;2021</div>
+                </div>
+                <ul>
+                  <li>Handled complex technical cases across multiple Microsoft products, diagnosing and resolving issues efficiently while coordinating with engineering for escalated problems.</li>
+                  <li>Developed troubleshooting guides and technical documentation, shared knowledge with peers, and participated in product feedback sessions with engineering teams.</li>
+                  <li>Collaborated cross-functionally to resolve product defects and bugs, communicating technical insights to internal stakeholders and ensuring proper escalation of critical issues.</li>
+                  <li>Managed full case lifecycles using CRM tools, tracking progress, documenting solutions, providing timely updates, and supporting continuous improvement initiatives.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2>Education</h2>
+              <div class="item">
+                <div class="item-head">
+                  <div>
+                    <p class="item-title">City College of San Francisco</p>
+                    <p class="item-sub">Networking and Information Technology</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <ul>
+                  <li>M365 Fundamentals</li>
+                  <li>AI Business Professional</li>
+                  <li>Security & Compliance</li>
+                  <li>Azure AI</li>
+                  <li>Data Science</li>
+                  <li>SQL</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <div>
+            <section>
+              <h2>Skills</h2>
+              <div class="chips">
+                <span class="chip">Partner Enablement</span>
+                <span class="chip">Technical Readiness</span>
+                <span class="chip">Solution Framework Creation</span>
+                <span class="chip">Solution Design</span>
+                <span class="chip">Deployment & Extensibility</span>
+                <span class="chip">Metric & Performance Analysis</span>
+                <span class="chip">AI Adoption & Strategy</span>
+                <span class="chip">Cross-Functional Collaboration</span>
+                <span class="chip">Bilingual: English & Spanish</span>
+              </div>
+            </section>
+            <section>
+              <h2>Links</h2>
+              <div class="item">
+                <p class="small">Update your LinkedIn button or add portfolio links here if desired.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
