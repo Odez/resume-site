@@ -172,6 +172,75 @@
       flex-direction:column;
       gap:10px;
     }
+
+    /* Responsive styles */
+    @media screen and (max-width: 480px) {
+      /* Reduce padding on small screens */
+      .wrap {
+        padding: 20px 16px 40px;
+      }
+      /* Slightly reduce name size while keeping dominance */
+      h1 {
+        font-size: 36px;
+      }
+      /* Place role and location on one line and insert a dash */
+      .role-location {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+      }
+      .role-location .role::after {
+        content: " \2014 ";
+      }
+      /* Stack links vertically with adequate tap spacing */
+      .header-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+      }
+      .header-links a {
+        display: block;
+        padding: 10px;
+        min-height: 44px;
+        text-align: center;
+      }
+      /* Improve summary readability on mobile */
+      .summary {
+        line-height: 1.7;
+      }
+      /* Stack skills columns vertically and center chips */
+      .skills-columns {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .skills-columns .column {
+        max-width: none;
+        width: 100%;
+      }
+      /* Reduce chip padding and font size to avoid overflow */
+      .chip {
+        padding: 5px 8px;
+        font-size: 12px;
+      }
+      /* Center certifications chips */
+      .certifications {
+        justify-content: center;
+      }
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      /* Adjust padding and name size for tablet sizes */
+      .wrap {
+        padding: 30px 20px 60px;
+      }
+      h1 {
+        font-size: 42px;
+      }
+    }
     @media print{
       body{background:#fff; color:#000}
       .wrap{padding:0; max-width:100%}
