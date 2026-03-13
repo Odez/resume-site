@@ -52,8 +52,6 @@ text-rendering:optimizeLegibility;
 -webkit-font-smoothing:antialiased;
 }
 
-/* ambient lighting layer */
-
 body::before{
 content:"";
 position:fixed;
@@ -68,24 +66,16 @@ pointer-events:none;
 z-index:-1;
 }
 
-/* container */
-
 .wrap{
 max-width:1100px;
 margin:auto;
 padding:60px 24px 80px;
 }
 
-/* main card */
-
 .card{
-
 background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-
 border:1px solid rgba(255,255,255,.18);
-
 border-radius:var(--radius);
-
 outline:1px solid rgba(255,255,255,.04);
 
 box-shadow:
@@ -94,7 +84,6 @@ inset 0 1px 0 rgba(255,255,255,.18),
 inset 0 -1px 0 rgba(255,255,255,.05);
 
 overflow:hidden;
-
 transition:transform .3s ease, box-shadow .3s ease;
 }
 
@@ -102,8 +91,6 @@ transition:transform .3s ease, box-shadow .3s ease;
 transform:translateY(-4px);
 box-shadow:0 35px 90px rgba(0,0,0,.55);
 }
-
-/* header */
 
 header{
 padding:36px 28px 24px;
@@ -119,8 +106,6 @@ font-size:46px;
 letter-spacing:-.02em;
 }
 
-/* role */
-
 .role-location{
 margin-top:10px;
 }
@@ -134,13 +119,12 @@ font-weight:500;
 color:var(--muted);
 }
 
-/* links */
-
 .header-links{
 margin-top:14px;
 display:flex;
 justify-content:center;
 gap:20px;
+flex-wrap:wrap;
 }
 
 .header-links a{
@@ -152,8 +136,6 @@ font-weight:500;
 .header-links a:hover{
 opacity:.85;
 }
-
-/* main */
 
 main{
 padding:28px;
@@ -171,31 +153,63 @@ text-transform:uppercase;
 color:var(--muted);
 }
 
-/* summary */
-
 .summary{
 font-size:16px;
 color:rgba(232,238,252,.92);
 }
 
-/* experience blocks */
+.projects-label{
+color:var(--accent);
+font-weight:600;
+}
+
+.chev{
+display:inline-block;
+color:var(--muted);
+margin-left:6px;
+transition:transform .2s ease, opacity .2s ease;
+opacity:.9;
+}
+
+details[open] summary .chev{
+transform:rotate(180deg);
+}
+
+details > summary{
+cursor:pointer;
+color:var(--accent);
+font-weight:600;
+list-style:none;
+-webkit-appearance:none;
+}
+
+details > summary::-webkit-details-marker{
+display:none;
+}
+
+details > summary::marker{
+display:none;
+}
+
+details > summary:hover{
+opacity:.9;
+}
+
+details > summary:focus-visible{
+outline:2px solid rgba(122,162,255,.45);
+outline-offset:3px;
+border-radius:10px;
+}
 
 .item{
-
 padding:16px;
-
 border-radius:14px;
-
 border:1px solid rgba(255,255,255,.15);
-
 background:rgba(0,0,0,.10);
-
 margin-bottom:14px;
-
 box-shadow:
 inset 0 1px 0 rgba(255,255,255,.15),
 inset 0 -1px 0 rgba(255,255,255,.04);
-
 transition:all .2s ease;
 }
 
@@ -236,8 +250,6 @@ li{
 margin:6px 0;
 }
 
-/* skills layout */
-
 .skills-columns{
 display:flex;
 justify-content:center;
@@ -245,28 +257,17 @@ gap:36px;
 flex-wrap:wrap;
 }
 
-/* chips */
-
 .chip{
-
 display:inline-block;
-
 font-size:13px;
-
 background:rgba(122,162,255,.10);
-
 border:1px solid rgba(122,162,255,.35);
-
 padding:6px 12px;
-
 border-radius:999px;
-
 box-shadow:
 inset 0 1px 0 rgba(255,255,255,.12),
 0 2px 6px rgba(0,0,0,.25);
-
 margin-bottom:6px;
-
 transition:.2s;
 }
 
@@ -275,33 +276,142 @@ border-color:rgba(122,162,255,.6);
 transform:translateY(-1px);
 }
 
-/* certifications */
-
 .certifications{
 display:flex;
 flex-wrap:wrap;
 gap:10px;
 justify-content:center;
+align-items:center;
 }
 
-/* responsive */
+.cert-chip{
+display:inline-block;
+font-size:13px;
+background:rgba(122,162,255,.10);
+border:1px solid rgba(122,162,255,.35);
+padding:6px 12px;
+border-radius:999px;
+text-decoration:none;
+color:var(--text);
+font-weight:500;
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,.12),
+0 2px 6px rgba(0,0,0,.25);
+margin-bottom:6px;
+transition:.2s;
+}
+
+.cert-chip:hover{
+border-color:rgba(122,162,255,.6);
+transform:translateY(-1px);
+}
+
+.quickfacts{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.metrics{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.metric{
+border:1px solid rgba(255,255,255,.15);
+background:rgba(0,0,0,.10);
+border-radius:14px;
+padding:14px 16px;
+min-width:170px;
+text-align:center;
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,.10),
+inset 0 -1px 0 rgba(255,255,255,.03);
+}
+
+.metric .num{
+font-weight:800;
+font-size:22px;
+letter-spacing:-.01em;
+}
+
+.metric .lbl{
+color:var(--muted);
+font-size:13px;
+margin-top:2px;
+}
+
+details{
+margin-top:10px;
+border:1px solid rgba(255,255,255,.12);
+background:rgba(0,0,0,.08);
+border-radius:12px;
+padding:10px 12px;
+}
+
+.details-list{
+margin:10px 0 0 18px;
+}
+
+.cta{
+display:flex;
+justify-content:center;
+}
+
+.cta .item{
+max-width:820px;
+width:100%;
+}
+
+.cta-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.cta-actions a{
+display:inline-block;
+border:1px solid rgba(122,162,255,.35);
+background:rgba(122,162,255,.10);
+padding:10px 14px;
+border-radius:12px;
+font-weight:700;
+color:var(--text);
+text-decoration:none;
+transition:border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.cta-actions a:hover{
+border-color:rgba(122,162,255,.6);
+transform:translateY(-1px);
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+.visitor-line{
+text-align:center;
+color:var(--muted);
+font-size:13px;
+margin-top:-12px;
+}
 
 @media(max-width:700px){
-
-.wrap{
-padding:40px 16px 60px;
+.wrap{padding:40px 16px 60px;}
+h1{font-size:36px;}
+.skills-columns{flex-direction:column;align-items:center;gap:18px;}
+.metric{min-width:0;width:100%;max-width:420px;}
+.certifications{gap:8px;}
 }
 
-h1{
-font-size:36px;
-}
-
-.skills-columns{
-flex-direction:column;
-align-items:center;
-gap:18px;
-}
-
+.last-updated{
+text-align:center;
+color:var(--muted);
+font-size:13px;
+margin-top:18px;
 }
 
 </style>
@@ -310,81 +420,63 @@ gap:18px;
 <body>
 
 <div class="wrap">
-
 <div class="card">
 
 <header>
-
 <h1>Oscar Meza Guedez</h1>
-
 <div class="role-location">
 <div class="role">Solution Architect</div>
 <div class="location">San Francisco, CA</div>
 </div>
-
 <div class="header-links">
 <a href="https://www.linkedin.com/in/oscarguedez/">LinkedIn</a>
 <a href="https://calendly.com/omguedez/30min">Book time with me</a>
+<a href="mailto:omguedez@outlook.com">Email</a>
+<!-- <a href="resume.pdf" download>Download</a>-->
 </div>
-
 </header>
 
 <main>
 
 <section>
-
 <h2>Summary</h2>
-
 <p class="summary">
-Solution Architect with 8+ years at Microsoft spanning architecture, enterprise sales, and technical support. Proven ability to translate complex business requirements into scalable cloud and AI solutions. Experienced in partner enablement, enterprise solution design, and driving adoption across Microsoft 365 and Copilot ecosystems. Known for building repeatable frameworks that improve partner readiness, accelerate deployments, and generate measurable business outcomes</p>
-
+Solution Architect with 8+ years at Microsoft spanning architecture, enterprise sales, and technical support. Proven ability to translate complex business requirements into scalable cloud and AI solutions. Experienced in partner enablement, enterprise solution design, and driving adoption across Microsoft 365 and Copilot ecosystems. Known for building repeatable frameworks that improve partner readiness, accelerate deployments, and generate measurable business outcomes
+</p>
 </section>
 
 <section>
-
 <h2>Skills</h2>
-
 <div class="skills-columns">
-
 <div>
 <span class="chip">Partner Enablement</span><br>
 <span class="chip">Technical Readiness</span><br>
-<span class="chip">Solution Framework Creation</span>
+<span class="chip">Copilot & M365 Expertise</span>
 </div>
-
 <div>
-<span class="chip">Solution Design</span><br>
-<span class="chip">Deployment & Extensibility</span><br>
-<span class="chip">Metric & Performance Analysis</span>
+<span class="chip">Solution Architecture</span><br>
+<span class="chip">GTM Strategy &amp; Execution</span><br>
+<span class="chip">Enterprise Sales</span>
 </div>
-
 <div>
-<span class="chip">AI Adoption & Strategy</span><br>
-<span class="chip">Cross-Functional Collaboration</span><br>
-<span class="chip">Bilingual: English & Spanish</span>
+<span class="chip">AI Adoption &amp; Strategy</span><br>
+<span class="chip">Cross-Functional Leadership</span><br>
+<span class="chip">Bilingual: English &amp; Spanish</span>
 </div>
-
 </div>
-
 </section>
 
 <section>
-
 <h2>Experience</h2>
 
 <div class="item">
-
 <div class="item-head">
-
 <div>
 <p class="item-title">Partner Solution Architect — Microsoft</p>
 <p class="item-sub">San Francisco, CA (Remote)</p>
 </div>
-
 <div class="item-date">May 2024 — Nov 2025</div>
-
 </div>
-
 <ul>
 <li>Assessed technical readiness across 50+ Microsoft partners, identifying architecture, identity, and governance gaps for Microsoft 365 Copilot deployments and reducing partner deployment timelines by 10%</li>
 <li>Designed scalable partner enablement frameworks that standardized architecture practices for Modern Work and Copilot solutions, increasing successful partner deployments by 10%</li>
@@ -393,22 +485,24 @@ Solution Architect with 8+ years at Microsoft spanning architecture, enterprise 
 <li>Facilitated partner capability assessments covering deployment, extensibility, and go-to-market readiness, providing structured improvement plans that increased partner solution maturity across the ecosystem</li>
 <li>Developed Copilot Practice Evaluation Framework, establishing a standardized partner qualification model used globally to evaluate hundreds of partners for funded Copilot engagements</li>
 </ul>
-
+<details>
+<summary><span class="projects-label">Projects</span><span class="chev">▾</span></summary>
+<ul class="details-list">
+<li>Established a global standard to qualify partners for funded Copilot engagements by developing an executive-ready scoring system</li>
+<li>Developed AI Maturity Framework to assess partner readiness across key dimensions and define structured implementation paths toward Copilot solution deployment</li>
+<li>Developed 90-day Copilot Practice Development Plan used to guide partners through capability building, GTM strategy, pipeline development, and co-sell activation</li>
+</ul>
+</details>
 </div>
 
 <div class="item">
-
 <div class="item-head">
-
 <div>
 <p class="item-title">Enterprise Account Manager — Microsoft</p>
 <p class="item-sub">San Francisco, CA (555 California St)</p>
 </div>
-
 <div class="item-date">Apr 2021 — Sep 2023</div>
-
 </div>
-
 <ul>
 <li>Managed a portfolio of 100 enterprise customers generating $1M in annual revenue, consistently achieving quarterly revenue targets of $250K per quarter</li>
 <li>Identified and executed upsell and cross-sell opportunities across Microsoft SaaS offerings, driving 20% year-over-year revenue growth across the portfolio</li>
@@ -417,63 +511,70 @@ Solution Architect with 8+ years at Microsoft spanning architecture, enterprise 
 <li>Delivered executive-level account planning and solution presentations that expanded Microsoft solution adoption across 35% of managed accounts</li>
 <li>Built cross-functional engagement models with partner and technical teams that improved alignment across sales, architecture, and delivery functions</li>
 </ul>
-
 </div>
 
 <div class="item">
-
 <div class="item-head">
-
 <div>
 <p class="item-title">Technical Advisor — Microsoft</p>
 <p class="item-sub">San Francisco, CA (555 California St)</p>
 </div>
-
 <div class="item-date">Sep 2017 — Apr 2021</div>
-
 </div>
-
 <ul>
 <li>Resolved complex Microsoft 365, Outlook, and Teams incidents within an SLA-driven support environment, maintaining 95%+ SLA compliance across high-priority enterprise cases</li>
 <li>Managed 40 active technical cases per week, diagnosing cross-platform cloud and endpoint issues across Microsoft 365 environments and ensuring rapid resolution through structured escalation</li>
 <li>Collaborated with Microsoft engineering teams to investigate product defects and escalate critical incidents, contributing to 20+ documented product fixes and service improvements</li>
 <li>Authored troubleshooting documentation and knowledge base articles that reduced repeat support incidents by 5% across common Microsoft 365 deployment issues</li>
-<li>Managed the full lifecycle of technical cases using CRM tools, improving operational efficiency and reducing average case resolution time by 20%</li>  
+<li>Managed the full lifecycle of technical cases using CRM tools, improving operational efficiency and reducing average case resolution time by 20%</li>
 </ul>
-
 </div>
 
 </section>
 
 <section>
-
 <h2>Education</h2>
-
 <div class="item">
 <p class="item-title">Networking and Information Technology — Cybersecurity</p>
 </div>
 
 <h2>Certifications</h2>
-
 <div class="item">
-
 <div class="certifications">
-<span class="chip">M365 Fundamentals</span>
-<span class="chip">AI Business Professional</span>
-<span class="chip">Security & Compliance</span>
-<span class="chip">Azure AI</span>
-<span class="chip">Data Science</span>
-<span class="chip">SQL</span>
-</div>
+
+  <a class="cert-chip" href="https://learn.microsoft.com/api/credentials/share/en-us/OscarMezaGuedez-1023/59BFA8685D9E79C2?sharingId=7832DE7043835B8D" target="_blank" rel="noopener">M365 Fundamentals</a>
+
+  <a class="cert-chip" href="https://learn.microsoft.com/api/credentials/share/en-us/OscarMezaGuedez-1023/F8C19D7A6593EF43?sharingId=7832DE7043835B8D" target="_blank" rel="noopener">AI Business Professional</a>
+
+  <a class="cert-chip" href="https://learn.microsoft.com/api/credentials/share/en-us/OscarMezaGuedez-1023/D3F580444810EB9A?sharingId=7832DE7043835B8D" target="_blank" rel="noopener">Security &amp; Compliance</a>
+
+  <a class="cert-chip" href="https://learn.microsoft.com/api/credentials/share/en-us/OscarMezaGuedez-1023/9798B47BF886ABF4?sharingId=7832DE7043835B8D" target="_blank" rel="noopener">Azure AI</a>
+
+  <span class="chip">Data Science</span>
+  <span class="chip">SQL</span>
 
 </div>
-
+</div>
 </section>
 
-</main>
-
+<section>
+<h2>Have a role in mind?</h2>
+<div class="cta-actions">
+<a href="https://calendly.com/omguedez/30min">Let's chat</a>
 </div>
+</section>
 
+<div class="last-updated" id="last-updated"></div>
+
+<script>
+  const d = new Date();
+  const month = d.toLocaleString('default', { month: 'long' });
+  const year = d.getFullYear();
+  document.getElementById('last-updated').textContent = 'Last updated: ' + month + ' ' + year;
+</script>
+
+</main>
+</div>
 </div>
 
 </body>
