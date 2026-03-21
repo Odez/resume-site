@@ -21,13 +21,43 @@
 <meta name="twitter:title" content="Oscar Meza Guedez">
 <meta name="twitter:description" content="8+ years at Microsoft. AI, cloud, and enterprise architecture. Based in San Francisco.">
 <meta name="twitter:image" content="https://omguedez.com/og-image.png">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- JSON-LD Person Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Oscar Meza Guedez",
+  "jobTitle": "Solution Architect",
+  "url": "https://omguedez.com",
+  "email": "omguedez@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Francisco",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/oscarguedez/"
+  ]
+}
+</script>
+
+<!-- Preconnect for faster font loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<!-- Local stylesheets -->
 <link href="aos.css" rel="stylesheet">
 <link href="bootstrap.min.css" rel="stylesheet">
 <link href="main.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 <style>
 /* ── GLOBAL TEXT SHARPENING ── */
 body, body *{
@@ -639,7 +669,7 @@ body::after{
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="profile-avatar"><img src="headshot.png" alt="Oscar Meza Guedez"/></div>
+    <div class="profile-avatar"><img src="headshot.png" alt="Oscar Meza Guedez" loading="lazy" width="150" height="150"/></div>
     <div class="hero-name">Oscar Meza Guedez</div>
     <p class="hero-sub">Solution Architect &nbsp;·&nbsp; San Francisco, CA</p>
     <div class="hero-btns">
@@ -822,7 +852,7 @@ body::after{
   <div class="footer-sub" id="footer-last-updated"></div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous"></script>
 <script>
   var d = new Date();
   var month = d.toLocaleString('default', { month: 'long' });
